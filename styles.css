@@ -449,8 +449,6 @@ p {
 
 .hex-tile {
   grid-column: span 2;
-  grid-template-columns: minmax(260px, 0.58fr) minmax(0, 1fr);
-  align-items: center;
   min-height: 330px;
 }
 
@@ -508,6 +506,10 @@ p {
   color: var(--muted);
   font-size: 1.03rem;
   line-height: 1.62;
+}
+
+.project-tile p strong {
+  color: var(--white);
 }
 
 .app-shots {
