@@ -744,14 +744,40 @@ p {
 
 .phone-gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 26px);
   align-items: start;
 }
 
-.phone-gallery .hero-phone {
-  grid-column: span 2;
-  grid-row: span 2;
+.screenshot-card {
+  display: grid;
+  gap: 14px;
+  padding: clamp(16px, 2vw, 22px);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    linear-gradient(145deg, rgba(234, 234, 234, 0.1), rgba(234, 234, 234, 0.024)),
+    rgba(12, 17, 21, 0.48);
+  box-shadow: var(--soft);
+  backdrop-filter: blur(18px);
+}
+
+.screenshot-card .phone-frame {
+  width: min(100%, 310px);
+  justify-self: center;
+}
+
+.screenshot-card h3 {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  line-height: 1.08;
+}
+
+.screenshot-card p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.58;
 }
 
 .legal-list {
@@ -784,8 +810,7 @@ p {
   .legal-strip,
   .support-panel,
   .page-hero,
-  .info-grid,
-  .phone-gallery {
+  .info-grid {
     grid-template-columns: 1fr;
   }
 
@@ -803,9 +828,8 @@ p {
     min-height: 440px;
   }
 
-  .phone-gallery .hero-phone {
-    grid-column: auto;
-    grid-row: auto;
+  .phone-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -926,6 +950,10 @@ p {
 
   .phone-frame img {
     border-radius: 20px;
+  }
+
+  .phone-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
