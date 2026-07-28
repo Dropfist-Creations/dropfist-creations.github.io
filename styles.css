@@ -479,6 +479,11 @@ p {
   border-radius: 28px;
 }
 
+.lorscana-visual img {
+  width: min(86%, 420px);
+  filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.42));
+}
+
 .project-tile h3 {
   margin: 0;
   font-family: "Montserrat", "Segoe UI", sans-serif;
