@@ -474,6 +474,11 @@ p {
   width: min(42%, 180px);
 }
 
+.resolve-visual img {
+  width: min(56%, 240px);
+  border-radius: 28px;
+}
+
 .project-tile h3 {
   margin: 0;
   font-family: "Montserrat", "Segoe UI", sans-serif;
