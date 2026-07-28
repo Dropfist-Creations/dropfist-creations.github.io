@@ -444,6 +444,7 @@ p {
 .feature-tile {
   grid-row: span 2;
   min-height: 730px;
+  align-content: start;
 }
 
 .hex-tile {
@@ -477,6 +478,13 @@ p {
   object-fit: contain;
 }
 
+.feature-tile .tile-visual {
+  width: min(100%, 430px);
+  aspect-ratio: 1;
+  height: auto;
+  justify-self: center;
+}
+
 .resolve-visual img {
   width: min(56%, 240px);
   border-radius: 28px;
@@ -500,6 +508,17 @@ p {
   color: var(--muted);
   font-size: 1.03rem;
   line-height: 1.62;
+}
+
+.app-shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.app-shots.is-empty {
+  display: none;
 }
 
 .scanner-stack {
