@@ -850,6 +850,33 @@ body.lightbox-open {
   cursor: pointer;
 }
 
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(44px, 5vw, 62px);
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--soft);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: clamp(16px, 4vw, 52px);
+}
+
+.lightbox-next {
+  right: clamp(16px, 4vw, 52px);
+}
+
 .lightbox-phone {
   width: min(82vw, 430px);
   max-height: calc(100vh - 80px);
@@ -1029,6 +1056,12 @@ body.lightbox-open {
 
   .phone-frame img {
     border-radius: 20px;
+  }
+
+  .lightbox-nav {
+    top: auto;
+    bottom: 18px;
+    transform: none;
   }
 
   .phone-gallery {
