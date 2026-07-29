@@ -562,6 +562,31 @@ p {
   background: #050505;
 }
 
+.phone-lightbox-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.phone-lightbox-trigger .phone-frame {
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.phone-lightbox-trigger:hover .phone-frame,
+.phone-lightbox-trigger:focus-visible .phone-frame {
+  border-color: rgba(123, 92, 255, 0.58);
+  box-shadow:
+    20px 28px 52px rgba(0, 0, 0, 0.5),
+    0 0 34px rgba(123, 92, 255, 0.18),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.08),
+    inset -5px -5px 12px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px);
+}
+
 .app-shots .phone-frame {
   border-radius: 24px;
   padding: 7px;
@@ -746,7 +771,7 @@ p {
 
 .phone-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 26px);
   align-items: start;
 }
@@ -765,7 +790,7 @@ p {
 }
 
 .screenshot-card .phone-frame {
-  width: min(100%, 310px);
+  width: min(100%, 260px);
   justify-self: center;
 }
 
@@ -780,6 +805,54 @@ p {
   margin: 0;
   color: var(--muted);
   line-height: 1.58;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  padding: clamp(18px, 4vw, 52px);
+  background: rgba(3, 5, 8, 0.82);
+  backdrop-filter: blur(24px) saturate(120%);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: grid;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: clamp(18px, 3vw, 34px);
+  right: clamp(18px, 3vw, 34px);
+  z-index: 2;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--soft);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lightbox-phone {
+  width: min(82vw, 430px);
+  max-height: calc(100vh - 80px);
+}
+
+.lightbox-phone img {
+  max-height: calc(100vh - 104px);
 }
 
 .legal-list {
@@ -831,7 +904,7 @@ p {
   }
 
   .phone-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -955,7 +1028,11 @@ p {
   }
 
   .phone-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .screenshot-card .phone-frame {
+    width: min(100%, 230px);
   }
 }
 
