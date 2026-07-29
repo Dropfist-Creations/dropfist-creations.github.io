@@ -525,6 +525,7 @@ p {
 
 .phone-frame {
   position: relative;
+  display: block;
   margin: 0;
   padding: 10px;
   overflow: hidden;
@@ -537,18 +538,21 @@ p {
     16px 22px 42px rgba(0, 0, 0, 0.42),
     inset 2px 2px 4px rgba(255, 255, 255, 0.08),
     inset -5px -5px 12px rgba(0, 0, 0, 0.6);
+  line-height: 0;
 }
 
 .phone-frame::before {
   position: absolute;
-  top: 8px;
+  top: 15px;
   left: 50%;
   z-index: 2;
-  width: 44px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
   content: "";
-  border-radius: 999px;
-  background: rgba(5, 7, 10, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  background: rgba(5, 7, 10, 0.92);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.34);
   transform: translateX(-50%);
 }
 
@@ -593,9 +597,9 @@ p {
 }
 
 .app-shots .phone-frame::before {
-  width: 30px;
-  height: 5px;
-  top: 6px;
+  width: 7px;
+  height: 7px;
+  top: 10px;
 }
 
 .app-shots .phone-frame img {
