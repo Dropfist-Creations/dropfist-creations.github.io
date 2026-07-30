@@ -762,6 +762,132 @@ p {
   justify-self: center;
 }
 
+.resolve-page .page-hero {
+  position: relative;
+  grid-template-columns: minmax(0, 0.88fr) minmax(340px, 0.72fr);
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  padding-top: clamp(38px, 6vw, 72px);
+  padding-bottom: clamp(22px, 4vw, 44px);
+}
+
+.resolve-page .page-hero::before {
+  position: absolute;
+  inset: 10% auto 4% clamp(22px, 4vw, 58px);
+  z-index: -1;
+  width: min(50vw, 620px);
+  content: "";
+  border: 1px solid rgba(218, 177, 92, 0.16);
+  border-radius: 42px;
+  background:
+    linear-gradient(135deg, rgba(218, 177, 92, 0.08), transparent 38%),
+    radial-gradient(circle at 24% 26%, rgba(123, 92, 255, 0.2), transparent 42%);
+  box-shadow: var(--inset);
+  transform: rotate(-3deg);
+}
+
+.resolve-hero-copy {
+  align-self: start;
+  padding-top: clamp(10px, 3vw, 36px);
+}
+
+.resolve-hero-copy > p:not(.eyebrow) {
+  max-width: 680px;
+}
+
+.resolve-hero-copy > p:not(.eyebrow):first-of-type {
+  margin-bottom: 0;
+  color: var(--white);
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-size: clamp(1.45rem, 2.4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.resolve-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.resolve-badges span {
+  padding: 10px 13px;
+  border: 1px solid rgba(218, 177, 92, 0.22);
+  border-radius: 999px;
+  color: #efd990;
+  background:
+    linear-gradient(145deg, rgba(218, 177, 92, 0.11), rgba(255, 255, 255, 0.025)),
+    rgba(10, 13, 16, 0.62);
+  box-shadow: var(--inset);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resolve-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 720px);
+}
+
+.resolve-hero-showcase::before {
+  position: absolute;
+  inset: 18% 0 10% 18%;
+  content: "";
+  border: 1px solid rgba(218, 177, 92, 0.15);
+  border-radius: 40px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(218, 177, 92, 0.16), transparent 38%),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: var(--soft);
+  transform: rotate(7deg);
+}
+
+.resolve-hero-phone {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  width: min(72%, 330px);
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.resolve-hero-phone.secondary-phone {
+  top: 98px;
+  left: 16%;
+  z-index: 1;
+  width: min(54%, 235px);
+  opacity: 0.52;
+  transform: rotate(-9deg);
+  filter: blur(0.2px);
+}
+
+.resolve-logo-badge {
+  position: absolute;
+  right: 8%;
+  bottom: 11%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border: 1px solid rgba(218, 177, 92, 0.24);
+  border-radius: 22px;
+  color: var(--white);
+  background: rgba(9, 12, 15, 0.78);
+  box-shadow: var(--soft);
+  backdrop-filter: blur(18px);
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.resolve-logo-badge img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -933,6 +1059,29 @@ body.lightbox-open {
     margin-left: 0;
   }
 
+  .resolve-page .page-hero {
+    min-height: auto;
+  }
+
+  .resolve-page .page-hero::before {
+    inset: 6% 22px auto;
+    width: auto;
+    height: 360px;
+  }
+
+  .resolve-hero-showcase {
+    min-height: 620px;
+  }
+
+  .resolve-hero-phone {
+    width: min(56vw, 320px);
+  }
+
+  .resolve-hero-phone.secondary-phone {
+    left: 24%;
+    width: min(42vw, 220px);
+  }
+
   .hero-mark {
     min-height: 440px;
   }
@@ -1022,6 +1171,34 @@ body.lightbox-open {
 
   .hero-mark {
     min-height: 360px;
+  }
+
+  .resolve-page .page-hero {
+    padding-top: 34px;
+  }
+
+  .resolve-page .page-hero::before {
+    height: 300px;
+    border-radius: 30px;
+  }
+
+  .resolve-hero-showcase {
+    min-height: 520px;
+  }
+
+  .resolve-hero-phone {
+    width: min(72vw, 270px);
+  }
+
+  .resolve-hero-phone.secondary-phone {
+    top: 78px;
+    left: 6%;
+    width: min(48vw, 190px);
+  }
+
+  .resolve-logo-badge {
+    right: 2%;
+    bottom: 8%;
   }
 
   .signal-card {
